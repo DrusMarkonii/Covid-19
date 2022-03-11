@@ -8,14 +8,19 @@
       animation: App-logo-spin infinite 10s linear;
     }
   }
+
+  
   
   .homePage-components {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    position: relative;
+    top: 180px;
+    bottom: auto;
   }
   .btn-content {
     margin-left: 40px;
+    
   }
 
   .nameBlock {
@@ -34,5 +39,6 @@
    line-height: 1.4rem;
    font-size: 1.2rem;
    cursor: pointer;
+   padding: 5px;
   }
   
