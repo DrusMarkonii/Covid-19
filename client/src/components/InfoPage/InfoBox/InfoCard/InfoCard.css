@@ -3,8 +3,9 @@
     margin: 0;
 }
 .InfoCard {
-    width: 120px;
+    width: 180px;
     border: 2px solid white;
     margin: 25px 10px;
     padding: 10px;
+    overflow-x:hidden;
 }

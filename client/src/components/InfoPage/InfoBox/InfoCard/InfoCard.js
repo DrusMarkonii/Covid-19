@@ -1,8 +1,8 @@
 import React from 'react'
 import './InfoCard.css'
 
-export default function InfoCard() {
+export default function InfoCard({props}) {
   return (
-    <div className='InfoCard'>InfoCard</div>
+    <div className='InfoCard'>{props}</div>
   )
 }

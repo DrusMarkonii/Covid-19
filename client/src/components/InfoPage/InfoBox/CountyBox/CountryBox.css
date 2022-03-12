@@ -1,0 +1,13 @@
+.countryBox {
+    border: 2px solid white;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-right: 50px;
+}
+.CountryPanel {
+    display: flex;
+    margin: 50px auto 40px;
+    justify-content: center;
+}
