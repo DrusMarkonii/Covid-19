@@ -4,7 +4,7 @@ import CountryBox from "./InfoBox/CountyBox/CountryBox";
 import InfoBox from "./InfoBox/InfoBox";
 import "./InfoPage.css";
 
-export default function Infopage() {
+export default function InfoPage() {
   return (
     <div className="infoPage">
       <Header />
