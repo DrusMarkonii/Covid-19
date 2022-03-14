@@ -5,6 +5,16 @@
 
 .info-box {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    border: 2px solid white;
+    padding: 20px;
+}
+
+.numberBox {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
 }

@@ -3,6 +3,9 @@
     margin: 0;
 }
 .InfoCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 180px;
     border: 2px solid white;
     margin: 25px 10px;
