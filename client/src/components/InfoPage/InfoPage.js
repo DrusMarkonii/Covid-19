@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Header from "../Header/Header";
 import CountryBox from "./InfoBox/CountyBox/CountryBox";
+import {UserContext} from '../../context'
 // import axios from "axios";
 
 import InfoBox from "./InfoBox/InfoBox";
+import InfoBoxOfCountry from "./InfoBox/InfoBoxOfCountry"
 import "./InfoPage.css";
 
 export default function InfoPage() {
@@ -19,15 +21,14 @@ export default function InfoPage() {
     items: [],
   });
 
-  const [currentCountry, setCurrentCountry] = useState('')
+  const [context, setContext] = useContext(UserContext);
+  const dataOfCountry = data.items.filter(country => country.Country === context)
+  // console.log(dataOfCountry[0])
+  const objCountry = dataOfCountry[0]
 
-  function changeSelect(event) {
-    setCurrentCountry(event.target.value);
-  }
 
-
-  useEffect(() => {
-    fetch("https://api.covid19api.com/summary")
+  useEffect( () => {
+     fetch("https://api.covid19api.com/summary")
       .then((res) => res.json())
       .then((res) =>
         setDataWorld({
@@ -38,7 +39,7 @@ export default function InfoPage() {
       );
   }, []);
 
-  useEffect(() => {
+  useEffect( () => {
     fetch("https://api.covid19api.com/summary")
       .then((res) => res.json())
       .then((res) =>
@@ -57,7 +58,7 @@ export default function InfoPage() {
       <InfoBox dataWorld={dataWorld} country={"World"} />
       <div className="countryPanelBox">
         <CountryBox data={data}  />
-        <InfoBox dataWorld={dataWorld} country={currentCountry} />
+        <InfoBoxOfCountry dataOfCountry={objCountry} country={context} />
       </div>
     </div>
   );

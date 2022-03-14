@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./CountryBox.css";
 import SelectBox from "../../SelectBox/SelectBox";
+import {UserContext} from '../../../../context'
 
 export default function CountryBox({ data }) {
   const arrOfCountries = data.items;
-  const [currentCountry, setCurrentCountry] = useState("");
+  const [currentCountry, setCurrentCountry] = useState(""); 
+  const [context, setContext] = useContext(UserContext)
 
   function changeSelect(event) {
-    setCurrentCountry(event.target.value);
+    setContext(event.target.value);
   }
 
   return (
     <div className="CountryPanel">
-      <div className="countryBox">
-        {currentCountry ? currentCountry : "Choose country"}
-      </div>
       <SelectBox counties={arrOfCountries} onChangeCountry={changeSelect} />
     </div>
   );
