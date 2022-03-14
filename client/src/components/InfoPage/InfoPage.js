@@ -19,6 +19,13 @@ export default function InfoPage() {
     items: [],
   });
 
+  const [currentCountry, setCurrentCountry] = useState('')
+
+  function changeSelect(event) {
+    setCurrentCountry(event.target.value);
+  }
+
+
   useEffect(() => {
     fetch("https://api.covid19api.com/summary")
       .then((res) => res.json())
@@ -42,17 +49,15 @@ export default function InfoPage() {
         })
       );
   }, []);
-  // const arr = data.items.map(item => console.log(item.Country))
-  console.log(data.items)
-  // console.log(arr)
+  // console.log(data.items)
 
   return (
     <div className="infoPage">
       <Header />
       <InfoBox dataWorld={dataWorld} country={"World"} />
       <div className="countryPanelBox">
-        <CountryBox data={data}/>
-        <InfoBox dataWorld={dataWorld} country={"World"} />
+        <CountryBox data={data}  />
+        <InfoBox dataWorld={dataWorld} country={currentCountry} />
       </div>
     </div>
   );

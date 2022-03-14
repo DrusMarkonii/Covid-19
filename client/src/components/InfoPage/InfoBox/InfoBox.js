@@ -10,7 +10,7 @@ export default function InfoBox({ dataWorld, country }) {
 
   return (
     <div className="info-box">
-      <h3>Number in the {country}</h3>
+      <h3>Number in the {country ? country : '_______________'}</h3>
       <div className="numberBox">
         <InfoCard name={`New Confirmed:`} count={NewConfirmed} />
         <InfoCard name={`Total Confirmed:`} count={TotalConfirmed} />
