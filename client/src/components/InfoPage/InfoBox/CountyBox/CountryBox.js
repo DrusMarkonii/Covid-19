@@ -5,7 +5,7 @@ import {UserContext} from '../../../../context'
 
 export default function CountryBox({ data }) {
   const arrOfCountries = data.items;
-  const [currentCountry, setCurrentCountry] = useState(""); 
+  // const [currentCountry, setCurrentCountry] = useState(""); 
   const [context, setContext] = useContext(UserContext)
 
   function changeSelect(event) {

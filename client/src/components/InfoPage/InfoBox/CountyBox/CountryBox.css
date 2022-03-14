@@ -8,8 +8,7 @@
 }
 .CountryPanel {
     display: flex;
-    margin: 50px auto 40px;
+    margin: 20px auto 30px;
     justify-content: center;
-    /* border: 2px solid white; */
     width: 80%;
 }
