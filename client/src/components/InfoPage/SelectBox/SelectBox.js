@@ -7,8 +7,9 @@ export default function SelectBox({counties, onChangeCountry}) {
   return (
     <div className='select-box'>
      <select className='select-form' onChange={onChangeCountry} >
-       {counties.map((item, index) => (
-         <option key={index} value={item.country}>{item.country}</option>
+     <option  value="Choose country">Choose country</option>
+       {counties.map((item) => (
+         <option key={item.ID} value={item.country}>{item.Country}</option>
        )
        )}
      </select>

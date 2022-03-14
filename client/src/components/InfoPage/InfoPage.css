@@ -1,7 +1,15 @@
 .infoPage {
     margin-bottom: 10px;
-    position: relative;
-    top: 100px;
-    margin: 0 30px;
+    height: 100vw;
+}
+
+.countryPanelBox {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    border: 2px solid white;
+    padding: 20px;
 }
 

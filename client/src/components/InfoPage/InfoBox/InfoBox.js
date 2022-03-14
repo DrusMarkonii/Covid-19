@@ -2,15 +2,15 @@ import React from "react";
 import InfoCard from "./InfoCard/InfoCard";
 import "./InfoBox.css";
 
-export default function InfoBox({ data }) {
-  const NewConfirmed = data.items.NewConfirmed;
-  const TotalConfirmed = data.items.TotalConfirmed;
-  const NewDeaths = data.items.NewDeaths;
-  const TotalDeaths = data.items.TotalDeaths;
+export default function InfoBox({ dataWorld, country }) {
+  const NewConfirmed = dataWorld.items.NewConfirmed;
+  const TotalConfirmed = dataWorld.items.TotalConfirmed;
+  const NewDeaths = dataWorld.items.NewDeaths;
+  const TotalDeaths = dataWorld.items.TotalDeaths;
 
   return (
     <div className="info-box">
-      <h3>Number in the World</h3>
+      <h3>Number in the {country}</h3>
       <div className="numberBox">
         <InfoCard name={`New Confirmed:`} count={NewConfirmed} />
         <InfoCard name={`Total Confirmed:`} count={TotalConfirmed} />
