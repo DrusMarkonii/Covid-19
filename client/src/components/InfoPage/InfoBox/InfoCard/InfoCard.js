@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./InfoCard.css";
 
 export default function InfoCard({ name, count }) {

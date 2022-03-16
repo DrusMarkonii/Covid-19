@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext} from "react";
-import Header from "../Header/Header";
-import CountryBox from "./InfoBox/CountyBox/CountryBox";
 import { UserContext } from "../../context";
-// import axios from "axios";
 
+import CountryBox from "./InfoBox/CountyBox/CountryBox";
+import Header from "../Header/Header";
 import InfoBox from "./InfoBox/InfoBox";
 import InfoBoxOfCountry from "./InfoBox/InfoBoxOfCountry";
+
 import "./InfoPage.css";
-// import Preloader from "../Preloader/Preloader";
+
 
 export default function InfoPage() {
   const [dataWorld, setDataWorld] = useState({

@@ -1,7 +1,10 @@
 import React from "react";
-import "./homePage.css";
-import logo from "./logo_corona.png";
 import { NavLink } from "react-router-dom";
+
+import logo from "../../assets/img/logo_corona.png";
+
+import "./homePage.css";
+
 export default function Homepage() {
   return (
     <div className="homePage">

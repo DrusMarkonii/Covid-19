@@ -1,5 +1,7 @@
 import React from "react";
+
 import InfoCard from "./InfoCard/InfoCard";
+
 import "./InfoBox.css";
 
 export default function InfoBox({ dataWorld}) {
