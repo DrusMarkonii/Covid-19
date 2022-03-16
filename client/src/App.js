@@ -1,14 +1,14 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { UserContext } from "./context";
 
-import HomePage from "./components/HomePage/HomePage";
-import InfoPage from "./components/InfoPage/InfoPage";
+import { HomePage } from "./components/HomePage/HomePage";
+import { InfoPage } from "./components/InfoPage/InfoPage";
 
 import "./App.css";
 
-function App() {
-  const [context, setContext] = useState('Afghanistan')
+export function App() {
+  const [context, setContext] = useState("Afghanistan");
   return (
     <Router>
       <UserContext.Provider value={[context, setContext]}>
@@ -22,5 +22,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

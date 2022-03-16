@@ -1,19 +1,23 @@
-import React from 'react'
+import React, { useMemo } from "react";
 
-import './SelectBox.css'
+import "./SelectBox.css";
 
-export default function SelectBox({counties, onChangeCountry}) {
-
-  
+export function SelectBox({ counties, onChangeCountry }) {
+  const COUNTRIES = useMemo(
+    () =>
+      counties.map((item) => (
+        <option key={item.ID} value={item.country}>
+          {item.Country}
+        </option>
+      )),
+    [counties]
+  );
   return (
-    <div className='select-box'>
-     <select className='select-form' onChange={onChangeCountry} >
-     <option  value="Choose country">Choose country</option>
-       {counties.map((item) => (
-         <option key={item.ID} value={item.country}>{item.Country}</option>
-       )
-       )}
-     </select>
+    <div className="select-box">
+      <select className="select-form" onChange={onChangeCountry}>
+        <option value="Choose country">Choose country</option>
+        {COUNTRIES}
+      </select>
     </div>
-  )
+  );
 }

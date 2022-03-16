@@ -1,10 +1,10 @@
 import React from "react";
 
-import InfoCard from "./InfoCard/InfoCard";
+import { InfoCard } from "./InfoCard/InfoCard";
 
 import "./InfoBox.css";
 
-export default function InfoBox({ dataWorld}) {
+export function InfoBox({ dataWorld }) {
   const NewConfirmed = dataWorld.items.NewConfirmed;
   const TotalConfirmed = dataWorld.items.TotalConfirmed;
   const NewDeaths = dataWorld.items.NewDeaths;

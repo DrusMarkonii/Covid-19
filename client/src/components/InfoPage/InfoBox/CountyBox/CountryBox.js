@@ -1,15 +1,14 @@
 import React, { useCallback, useContext } from "react";
-import SelectBox from "../../SelectBox/SelectBox";
-import {UserContext} from '../../../../context';
+import { SelectBox } from "../../SelectBox/SelectBox";
+import { UserContext } from "../../../../context";
 
 import "./CountryBox.css";
 
-export default function CountryBox({ data }) {
+export function CountryBox({ data }) {
   const arrOfCountries = data.items;
-  const [context, setContext] = useContext(UserContext)
+  const [context, setContext] = useContext(UserContext);
 
-  const changeSelect = useCallback((e) => setContext(e.target.value))
-
+  const changeSelect = useCallback((e) => setContext(e.target.value));
 
   return (
     <div className="CountryPanel">

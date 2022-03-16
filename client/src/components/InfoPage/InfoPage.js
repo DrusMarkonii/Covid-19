@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../context";
 
-import CountryBox from "./InfoBox/CountyBox/CountryBox";
-import Header from "../Header/Header";
-import InfoBox from "./InfoBox/InfoBox";
-import InfoBoxOfCountry from "./InfoBox/InfoBoxOfCountry";
+import { CountryBox } from "./InfoBox/CountyBox/CountryBox";
+import { Header } from "../Header/Header";
+import { InfoBox } from "./InfoBox/InfoBox";
+import { InfoBoxOfCountry } from "./InfoBox/InfoBoxOfCountry";
 
 import "./InfoPage.css";
 
-
-export default function InfoPage() {
+export function InfoPage() {
   const [dataWorld, setDataWorld] = useState({
     error: null,
     isLoaded: false,
@@ -26,7 +25,7 @@ export default function InfoPage() {
   const dataOfCountry = data.items.filter(
     (country) => country.Country === context
   );
-  // console.log(dataOfCountry[0])
+
   const objCountry = dataOfCountry[0];
 
   useEffect(() => {
@@ -53,22 +52,22 @@ export default function InfoPage() {
       );
   }, []);
 
-  console.log(dataWorld.isLoaded);
-  console.log(data.isLoaded);
-
   return (
     <>
-    {!dataWorld.isLoaded && !data.isLoaded ? <h5>loading .....</h5> :  
-      <div className="infoPage">
-        <Header />
-        {/* <Preloader /> */}
+      {!dataWorld.isLoaded && !data.isLoaded ? (
+        <h5>loading .....</h5>
+      ) : (
+        <div className="infoPage">
+          <Header />
+          {/* <Preloader /> */}
 
-        <InfoBox dataWorld={dataWorld} country={"World"} />
-        <div className="countryPanelBox">
-          <CountryBox data={data} />
-          <InfoBoxOfCountry dataOfCountry={objCountry} country={context} />
+          <InfoBox dataWorld={dataWorld} country={"World"} />
+          <div className="countryPanelBox">
+            <CountryBox data={data} />
+            <InfoBoxOfCountry dataOfCountry={objCountry} country={context} />
+          </div>
         </div>
-      </div>}
+      )}
     </>
   );
 }

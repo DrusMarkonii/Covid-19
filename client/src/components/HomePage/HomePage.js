@@ -5,7 +5,7 @@ import logo from "../../assets/img/logo_corona.png";
 
 import "./homePage.css";
 
-export default function Homepage() {
+export function HomePage() {
   return (
     <div className="homePage">
       <div className="homePage-components">
